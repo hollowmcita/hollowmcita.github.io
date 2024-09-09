@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="/src/images/logo.png" type="image/x-icon">
+
+    <title>HollowMc | Home</title>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/assets/80abfb8fd25eb1ad9a65b8017e1dff9223da45a8-css/style.css?v=1721921909">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+  <header class="header">
+    <div class="header__content">
+      <a class="header__logo" href="#">
+        <img class="image-logo" src="/src/images/logo.png" alt="">
+      </a>
+      <ul class="header__menu">
+        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-book-atlas"></i> Regolamento</a></li>
+        <li><a href="#" class="store-btn"><i class="fa-solid fa-store"></i> Store</a></li>
+        <li><a href="#"><i class="fa-solid fa-check-to-slot"></i> Vote</a></li>
+        <li><a href="#"><i class="fa-solid fa-clipboard-user"></i> Staff</a></li>
+      </ul>
+      <div class="header__quick">
+        <a href="#">Contacts</a>
+        <div class="icon-hamburger">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header> 
+  <!--Hero-->  
+  <div class="hero">
+        <div class="flex justify-between items-center flex-col z-20">
+            <div class="flex-1 flex justify-center items-center gap-12 px-5 lg:px-0 w-full" style="min-height: 15rem;">
+                <div class="flex-1 hidden lg:flex items-center justify-end gap-5">
+                    <div class="text-right copy hover:cursor-pointer" onclick="change_text();">
+                        <h2 class="neon-text text-lg"><strong>HOLLOWMC.IT</strong></h2>
+                        <span id="minecraftcount"><strong>No players online</strong></span>
+                    </div>
+                    <div class="flex-none flex justify-center items-center h-16 w-16 icon rounded-lg">
+                        <i class="fa-solid fa-globe h-fit text-3xl"></i>
+                    </div>
+                </div>
+                <div class="flex-none max-h-96 max-w-md w-fit h-fit p-6">
+                  <img class="animation-floating-logo" src="/src/images/logo.png">
+              </div>              
+                <div class="flex-1 hidden lg:flex items-center justify-start gap-5">
+                    <div class="flex-none flex justify-center items-center h-16 w-16 icon rounded-lg">
+                        <i class="fa-brands fa-discord h-fit text-3xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <h2 class="neon-text text-lg"><strong>DISCORD SERVER</strong></h2>
+                        <span id="discordcount"><strong>No players online</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Discord Widget & About -->
+<div class="flex flex-wrap gap-6 p-5">
+    <!-- Discord Widget -->
+    <iframe src="https://discord.com/widget?id=1211782052022718474&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    
+    <!-- About -->
+    <div class=" box about p-5 flex-1 rounded-lg shadow-lg">
+        <div class=" about p-5 flex-1 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-left">Chi Siamo?</h2>
+            <p class="text-lg">
+                Siamo un team dedicato alla creazione di esperienze di gioco uniche e coinvolgenti. 
+                Il nostro obiettivo è fornire un ambiente di gioco stimolante e divertente per tutti i nostri utenti. 
+                Con una forte community e un supporto costante, ci impegniamo a mantenere alta la qualità dei nostri servizi.
+            </p>
+            <h2 class="text-2xl font-bold mb-4" style="margin-top: 15px;">Pagamenti:</h2>
+            <p class="text-lg">
+               1 • Vai su <a href="">Store</a> <br>
+               2 • Scegli il  pacchetto che preferisci <br>
+               3 • Clicca il Bottone Paypal <br>
+               4 • Acquista <br> <br>
+               <h3> <i class="fa-solid fa-triangle-exclamation " style="color: #6825BE;"></i> Se ci dovrebbero essere problemi col pagamento aprire un ticket sul <a href="https://dsc.gg/hollowmcofficial" target="_blank">Server Discord</a> <i class="fa-solid fa-triangle-exclamation" style="color: #6825BE;"></i></h3>
+            </p>
+            <div id="join"></div>
+      <div class="main3">
+        <div class="main3_join_div_div">
+          <div class="main3_join_div">
+            <a class="main3_join_title">Java</a>
+            <div class="main3_join_content_div">
+              <div class="main3_join_categories">
+                <a>IP:</a>
+                <a>Version:</a>
+              </div>
+              <div class="main3_join_values">
+                <a>PLAY.HOLLOWMC.IT</a>
+                <a>1.8 / 1.21</a>
+              </div>
+            </div>
+          </div>
+          <div class="main3_join_div">
+            <a class="main3_join_title">Bedrock</a>
+            <div class="main3_join_content_div">
+              <div class="main3_join_categories">
+                <a>IP:</a>
+                <a>Port:</a>
+              </div>
+              <div class="main3_join_values">
+                <a>PLAY.HOLLOWMC.IT</a>
+                <a>25565</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+            <div class="footer">
+                <p class="text-lg text-center">&copy; HollowMC, 2024 All rights Are Reserved</p>
+            </div>
+        </div>
+    </div>    
+</div>
+    <!-- Scripts -->
+<script src="/src/js/main.js"></script>
+</body>
+
+</html>

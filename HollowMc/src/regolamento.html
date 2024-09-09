@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="/src/images/logo.png" type="image/x-icon">
+
+    <title>HollowMc | Regolamento</title>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/regolamento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/assets/80abfb8fd25eb1ad9a65b8017e1dff9223da45a8-css/style.css?v=1721921909">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header__content">
+      <a class="header__logo" href="#">
+          <img class="image-logo" src="/src/images/logo.png" alt="">
+      </a>
+      <ul class="header__menu">
+          <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#"><i class="fa-solid fa-book-atlas"></i> Regolamento</a></li>
+          <li><a href="#" class="store-btn"><i class="fa-solid fa-store"></i> Store</a></li>
+          <li><a href="#"><i class="fa-solid fa-check-to-slot"></i> Vote</a></li>
+          <li><a href="#"><i class="fa-solid fa-clipboard-user"></i> Staff</a></li>
+      </ul>
+      <div class="header__quick">
+          <a href="#">Contacts</a>
+          <div class="icon-hamburger">
+              <span></span>
+              <span></span>
+          </div>
+      </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="flex justify-between items-center flex-col z-20">
+  <div class="flex-1 flex justify-center items-center gap-12 px-5 lg:px-0 w-full" style="min-height: 15rem;">
+      <div class="flex-1 hidden lg:flex items-center justify-end gap-5">
+          <div class="text-right copy hover:cursor-pointer" onclick="change_text();">
+              <h2 class="neon-text text-lg"><strong>HOLLOWMC.IT</strong></h2>
+              <span id="minecraftcount"><strong>No players online</strong></span>
+          </div>
+          <div class="flex-none flex justify-center items-center h-16 w-16 icon rounded-lg">
+              <i class="fa-solid fa-globe h-fit text-3xl"></i>
+          </div>
+      </div>
+      <div class="flex-none max-h-96 max-w-md w-fit h-fit p-6">
+          <img class="animation-floating-logo" src="/src/images/logo.png">
+      </div>
+      <div class="flex-1 hidden lg:flex items-center justify-start gap-5">
+          <div class="flex-none flex justify-center items-center h-16 w-16 icon rounded-lg">
+              <i class="fa-brands fa-discord h-fit text-3xl"></i>
+          </div>
+          <div class="text-left">
+              <h2 class="neon-text text-lg"><strong>DISCORD SERVER</strong></h2>
+              <span id="discordcount"><strong>No players online</strong></span>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Discord Widget & About -->
+<div class="flex flex-wrap gap-6 p-5">
+  <!-- Discord Widget -->
+  <iframe src="https://discord.com/widget?id=1211782052022718474&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+  <!-- Accordion Containers -->
+  <div class="box about p-5 flex-1 rounded-lg shadow-lg">
+      <button class="accordion"><i class="fa-brands fa-discord"></i> Regolamento Discord</button>
+      <div class="panel">
+          <h2 class="text-2xl font-bold mb-4 text-left">REGOLE DISCORD</h2>
+          <p class="text-left">
+              Le regole che noi staff vorremmo che voi rispettaste maggiormente è la seguente:
+          </p>
+          <h3 class="text-xl font-bold mt-4 mb-2 text-left">Tos di Discord:</h3>
+          <ul class="list-disc list-inside text-left">
+              <li><a href="https://discord.com/terms" class="text-blue-400 hover:text-blue-600">https://discord.com/terms</a></li>
+              <li><a href="https://discord.com/guidelines" class="text-blue-400 hover:text-blue-600">https://discord.com/guidelines</a></li>
+          </ul>
+          <h3 class="text-xl font-bold mt-4 mb-2 text-left">Regole Server:</h3>
+          <ul class="list-disc list-inside text-left">
+              <li class="discord-embed"><strong>Lo staff ha qualsiasi diritto di allontanare chiunque dalla community.</strong></li>
+              <li class="discord-embed"><strong class="accordion-title">Rispettare la community:</strong>
+                  <p class="ml-4">Richiediamo di rispettare la community anche per motivi di religione, razza, opinione politica e lingua. Non tolleriamo flame, troll o insulti e razzismo contro un membro della community. Se viene eseguito il FLOOD cioè un tipo di spam in un canale o altre stanze o taggare gente multiple volte non verrà tollerato. Earrape e soundboard non verranno tollerati perché potrebbero disturbare i membri e soprattutto infastidirli.</p>
+              </li>
+              <li class="discord-embed"><strong class="accordion-title">Alt account:</strong>
+                  <p class="ml-4">È vietato avere un secondo account per usarlo nella community. Si può soltanto con l'approvazione di uno staffer.</p>
+              </li>
+              <li class="discord-embed"><strong class="accordion-title">NSFW:</strong>
+                  <p class="ml-4">Il NSFW cioè "No Safe for Work" sarebbe un raggruppamento di foto, video o link che possono danneggiare fisicamente e mentalmente una persona ma principalmente è pura pornografia. Se siete interessati potete trovare più informazioni su questo sito: <a href="https://it.wikipedia.org/wiki/NSFW" class="text-blue-400 hover:text-blue-600">https://it.wikipedia.org/wiki/NSFW</a></p>
+              </li>
+              <li class="discord-embed"><strong class="accordion-title">Promozione:</strong>
+                  <p class="ml-4">Auto promuovere un server esterno in una chat testuale oppure in una vocale pubblica è assolutamente vietato, a meno che non si abbia l'approvazione di uno staffer.</p>
+              </li>
+          </ul>
+          <h3 class="text-xl font-bold mt-4 mb-2 text-left">Che cosa succede se non rispetto le regole?</h3>
+          <p class="text-left">
+              Se si infrangono ripetutamente le regole si riceverà un warn, che in italiano significa "avviso", questo warn è per avvisare il membro che ha infranto una regola, quando si arriverà a tre warn il membro verrà allontanato dalla community per un periodo breve di tempo (minimo 3 giorni) lo staff lo sbannerà quando riterrà che sia pronto per rientrare nella community.
+              Tutti gli warn verranno rimossi dopo 2 settimane.
+          </p>
+      </div>
+
+      <button class="accordion"><i class="fa-solid fa-cube"></i> Regolamento Minecraft</button>
+      <div class="panel">
+          <h3 class="text-xl font-bold mt-4 mb-2 text-left">Regolamento Minecraft:</h3>
+          <ul class="list-disc list-inside text-left">
+              <li class="discord-embed"><strong class="accordion-title">1. Rispetto degli Altri:</strong> Non tolleriamo alcun tipo di comportamento offensivo, minacce o bullismo.</li>
+              <li class="discord-embed"><strong class="accordion-title">2. Divieto di Cheating:</strong> L'uso di cheat, hack o exploit è severamente vietato e sarà punito con il ban.</li>
+              <li class="discord-embed"><strong class="accordion-title">3. Protezione delle Costruzioni:</strong> Non distruggere o modificare le costruzioni di altri giocatori senza permesso.</li>
+              <li class="discord-embed"><strong class="accordion-title">4. Uso di Linguaggio Appropriato:</strong> Evita di usare un linguaggio inappropriato o volgare in chat.</li>
+              <li class="discord-embed"><strong class="accordion-title">5. Rispetto delle Regole del Server:</strong> Segui sempre le indicazioni degli amministratori e dei moderatori del server.</li>
+          </ul>
+      </div>
+
+      <button class="accordion"><i class="fa-solid fa-money-check-dollar"></i> Regolamento Pagamenti</button>
+      <div class="panel">
+          <h3 class="text-xl font-bold mt-4 mb-2 text-left">Regolamento Pagamenti:</h3>
+          <ul class="list-disc list-inside text-left">
+              <li class="discord-embed"><strong class="accordion-title">1. Metodi di Pagamento Accettati:</strong>  pagamenti devono essere effettuati tramite metodi approvati dal server, come PayPal, carte di credito/debito, o altre piattaforme di pagamento sicure.</li>
+              <li class="discord-embed"><strong class="accordion-title">2. Prezzi e Offerte:</strong> I prezzi dei kit e dei pacchetti VIP sono stabiliti e pubblicati sul sito ufficiale del server o nel negozio in-game.</li>
+              <li class="discord-embed"><strong class="accordion-title">3. Conferma di Pagamento::</strong> Ogni pagamento deve essere confermato tramite l'invio di una ricevuta o di una conferma di transazione.</li>
+              <li class="discord-embed"><strong class="accordion-title">4. Attivazione e Accesso:</strong>L’accesso ai vantaggi VIP e ai kit sarà concesso solo dopo la conferma del pagamento.</li>
+              <li class="discord-embed"><strong class="accordion-title">Politica di Rimborso:</strong> I rimborsi non sono generalmente accettati, tranne in caso di errori tecnici dimostrabili o di problemi di attivazione.</li>
+          </ul>
+      </div>
+  </div>
+</div>
+<!-- Scripts -->
+<script src="/src/js/regolamento.js"></script>
+
+</body>
+</html>

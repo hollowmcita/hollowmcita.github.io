@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <title>HollowMc | Candidatura</title>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0"></script>
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bandi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/assets/80abfb8fd25eb1ad9a65b8017e1dff9223da45a8-css/style.css?v=1721921909">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header__content">
+      <a class="header__logo" href="#">
+          <img class="image-logo" src="images/logo.png" alt="">
+      </a>
+      <ul class="header__menu">
+          <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#"><i class="fa-solid fa-book-atlas"></i> Regolamento</a></li>
+          <li><a href="#" class="store-btn"><i class="fa-solid fa-store"></i> Store</a></li>
+          <li><a href="#"><i class="fa-solid fa-check-to-slot"></i> Vote</a></li>
+          <li><a href="#"><i class="fa-solid fa-clipboard-user"></i> Staff</a></li>
+      </ul>
+      <div class="header__quick">
+          <a href="#">Contacts</a>
+          <div class="icon-hamburger">
+              <span></span>
+              <span></span>
+          </div>
+      </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="flex justify-between items-center flex-col z-20">
+  <div class="flex-1 flex justify-center items-center gap-12 px-5 lg:px-0 w-full" style="min-height: 15rem;">
+      <div class="flex-1 hidden lg:flex items-center justify-end gap-5">
+          <div class="text-right copy hover:cursor-pointer" onclick="change_text();">
+              <h2 class="neon-text text-lg"><strong>HOLLOWMC.IT</strong></h2>
+              <span id="minecraftcount"><strong>No players online</strong></span>
+          </div>
+          <div class="flex-none flex justify-center items-center h-16 w-16 icon rounded-lg">
+              <i class="fa-solid fa-globe h-fit text-3xl"></i>
+          </div>
+      </div>
+      <div class="flex-none max-h-96 max-w-md w-fit h-fit p-6">
+          <img class="animation-floating-logo" src="images/logo.png">
+      </div>
+      <div class="flex-1 hidden lg:flex items-center justify-start gap-5">
+          <div class="flex-none flex justify-center items-center h-16 w-16 icon rounded-lg">
+              <i class="fa-brands fa-discord h-fit text-3xl"></i>
+          </div>
+          <div class="text-left">
+              <h2 class="neon-text text-lg"><strong>DISCORD SERVER</strong></h2>
+              <span id="discordcount"><strong>No players online</strong></span>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Discord Widget & About -->
+<div class="flex flex-wrap gap-6 p-5">
+  <!-- Discord Widget -->
+  <iframe src="https://discord.com/widget?id=1211782052022718474&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+  <!-- Accordion Containers -->
+  <div class="box about p-5 flex-1 rounded-lg shadow-lg">
+      <button class="accordion"><i class="fa-brands fa-discord"></i> Bando Staff</button>
+      <div class="panel">
+          <h3 class="text-xl font-bold mt-4 mb-2 text-left">Bando Staff:</h3>
+          <ul class="list-disc list-inside text-left">
+              <li><strong>1. Avere 15+:</strong> Devi avere almeno 15 anni.</li>
+              <li><strong>2. Non essere Staffer di un'altro server:</strong> Non devi essere attualmente staffer di un altro server.</li>
+              <li><strong>3. Avere un microfono:</strong> Devi avere un microfono per comunicare con lo staff.</li>
+              <li><strong>4. Sapere le basi di moderazione:</strong> Devi conoscere le basi della moderazione.</li>
+          </ul>
+          <p><strong>Percorso del Bando:</strong></p>
+          <ol class="list-decimal list-inside mb-4">
+              <li>Completa questo modulo e rispondi alle domande. Dopo aver completato il modulo, avrai accesso a un canale per comunicarci quando sei pronto per la prova orale.</li>
+              <li>Se soddisfi i requisiti, parteciperai alla prova orale con domande specifiche sul server. Se superi la prova orale, sarai messo in prova come trial staffer.</li>
+          </ol>
+          <p><strong>Modulo di Candidatura:</strong></p>
+          <form method="post" action="bando-staff.php">
+    <label for="discord_name">Nome di Discord *</label>
+    <input type="text" id="discord_name" name="discord_name" required><br>
+    <label for="minecraft_name">Nome di Minecraft *</label>
+    <input type="text" id="minecraft_name" name="minecraft_name" required><br>
+    <label for="minecraft_account">Che tipo di account Minecraft hai? *</label><br>
+    <input type="radio" id="premium" name="minecraft_account" value="premium" required>
+    <label for="premium">Premium</label><br>
+    <input type="radio" id="cracked" name="minecraft_account" value="cracked">
+    <label for="cracked">Craccato</label><br>
+    <label for="age">Età *</label>
+    <input type="number" id="age" name="age" required><br>
+    <label for="staff_type">Che tipo di staffer vorresti essere? *</label>
+    <input type="text" id="staff_type" name="staff_type" required><br>
+    <label for="why_staff">Perché vuoi diventare uno staffer? *</label>
+    <textarea id="why_staff" name="why_staff" required></textarea><br>
+    <label for="activity">Quanto credi di restare attivo nel server? *</label><br>
+    <input type="radio" id="1h" name="activity" value="1H+" required>
+    <label for="1h">1H+</label><br>
+    <input type="radio" id="2h" name="activity" value="2H+">
+    <label for="2h">2H+</label><br>
+    <input type="radio" id="3h" name="activity" value="3H+">
+    <label for="3h">3H+</label><br>
+    <input type="radio" id="4h" name="activity" value="4H+">
+    <label for="4h">4H+</label><br>
+    <input type="radio" id="5h" name="activity" value="5H+">
+    <label for="5h">5H+</label><br>
+    <label for="extra">Cosa pensi di avere in più degli altri candidati? *</label>
+    <textarea id="extra" name="extra" required></textarea><br>
+    <button type="submit" class="btn-submit">Invia</button>
+</form>
+
+      </div>
+
+      <button class="accordion"><i class="fa-solid fa-shield-halved"></i> SS Team</button>
+      <div class="panel">
+          <h3 class="text-xl font-bold mt-4 mb-2 text-left">SS Team:</h3>
+          <ul class="list-disc list-inside text-left">
+              <li><strong>1. Avere 15+:</strong> Devi avere almeno 15 anni.</li>
+              <li><strong>2. Non essere Staffer di un altro server:</strong> Non devi essere attualmente staffer di un altro server.</li>
+              <li><strong>3. Avere un microfono:</strong> Devi avere un microfono per comunicare con lo staff.</li>
+              <li><strong>4. Sapere le basi di moderazione:</strong> Devi conoscere le basi della moderazione.</li>
+              <li><strong>5. Sapere come fare il SS admin:</strong> Devi sapere come gestire il ruolo di SS admin.</li>
+          </ul>
+          <p><strong>Percorso del Bando:</strong></p>
+          <ol class="list-decimal list-inside mb-4">
+              <li>Completa questo modulo e rispondi alle domande. Dopo aver completato il modulo, avrai accesso a un canale per comunicarci quando sei pronto per la prova orale.</li>
+              <li>Se soddisfi i requisiti, parteciperai alla prova orale con domande specifiche sul server. Se superi la prova orale, sarai messo in prova come trial SS admin.</li>
+          </ol>
+          <p><strong>Modulo di Candidatura:</strong></p>
+          <form method="post" action="bando-SSadmin.php">
+              <label for="discord_name_ss">Nome di Discord *</label>
+              <input type="text" id="discord_name_ss" name="discord_name_ss" required><br> 
+              <label for="minecraft_name_ss">Nome di Minecraft *</label>
+              <input type="text" id="minecraft_name_ss" name="minecraft_name_ss" required><br>
+              <label for="minecraft_account_ss">Che tipo di account Minecraft hai? *</label><br>
+              <input type="radio" id="premium_ss" name="minecraft_account_ss" value="premium" required>
+              <label for="premium_ss">Premium</label><br>
+              <input type="radio" id="cracked_ss" name="minecraft_account_ss" value="cracked">
+              <label for="cracked_ss">Craccato</label><br>
+              <input type="radio" id="bedrock_ss" name="minecraft_account_ss" value="bedrock">
+              <label for="bedrock_ss">Bedrock</label><br>
+              <label for="age_ss">Età *</label>
+              <input type="number" id="age_ss" name="age_ss" required><br>
+              <label for="ss_experience">Sei stato un SS admin in altri server? Se sì, quali? *</label>
+              <textarea id="ss_experience" name="ss_experience" required></textarea><br>
+              <label for="current_staffer_ss">Attualmente sei staffer in un altro server? *</label><br>
+              <input type="radio" id="current_staffer_ss_yes" name="current_staffer_ss" value="si" required>
+              <label for="current_staffer_ss_yes">Sì</label><br>
+              <input type="radio" id="current_staffer_ss_no" name="current_staffer_ss" value="no">
+              <label for="current_staffer_ss_no">No</label><br>
+              <label for="why_ss_admin">Perché vuoi diventare SS admin? *</label>
+              <textarea id="why_ss_admin" name="why_ss_admin" required></textarea><br>
+              <label for="activity_ss">Quanto credi di essere attivo nel server? *</label><br>
+              <input type="radio" id="1h_ss" name="activity_ss" value="1H+" required>
+              <label for="1h_ss">1H+</label><br>
+              <input type="radio" id="2h_ss" name="activity_ss" value="2H+">
+              <label for="2h_ss">2H+</label><br>
+              <input type="radio" id="3h_ss" name="activity_ss" value="3H+">
+              <label for="3h_ss">3H+</label><br>
+              <input type="radio" id="4h_ss" name="activity_ss" value="4H+">
+              <label for="4h_ss">4H+</label><br>
+              <input type="radio" id="5h_ss" name="activity_ss" value="5H+">
+              <label for="5h_ss">5H+</label><br>
+              <label for="extra_ss">Cosa pensi di avere in più degli altri candidati? *</label>
+              <textarea id="extra_ss" name="extra_ss" required></textarea><br>
+              <button type="submit" class="btn-submit">Invia</button>
+          </form>
+      </div>
+
+      <button class="accordion"><i class="fa-solid fa-shield-halved"></i>Builder</button>
+      <div class="panel">
+          <h3 class="text-xl font-bold mt-4 mb-2 text-left">Builder:</h3>
+          <ul class="list-disc list-inside text-left">
+              <li><strong>1. Avere 15+:</strong> Devi avere almeno 15 anni.</li>
+              <li><strong>2. Non essere Staffer di un altro server:</strong> Non devi essere attualmente staffer di un altro server.</li>
+              <li><strong>3. Avere un microfono:</strong> Devi avere un microfono per comunicare con lo staff.</li>
+              <li><strong>4. Sapere le basi di moderazione:</strong> Devi conoscere le basi della moderazione.</li>
+              <li><strong>5. Sapere come fare il SS admin:</strong> Devi sapere come gestire il ruolo di SS admin.</li>
+          </ul>
+      <form method="post" action="bando-builder.php" enctype="multipart/form-data">
+        <label for="minecraft_name_builder">Nome di Minecraft *</label>
+        <input type="text" id="minecraft_name_builder" name="minecraft_name_builder" required><br>
+    
+        <label for="discord_name_builder">Nome di Discord *</label>
+        <input type="text" id="discord_name_builder" name="discord_name_builder" required><br>
+    
+        <label for="age_builder">Età *</label>
+        <input type="number" id="age_builder" name="age_builder" required><br>
+    
+        <label for="minecraft_account_builder">Che tipo di account Minecraft usi? *</label><br>
+        <input type="radio" id="java_builder" name="minecraft_account_builder" value="java" required>
+        <label for="java_builder">Java</label><br>
+        <input type="radio" id="cracked_builder" name="minecraft_account_builder" value="cracked">
+        <label for="cracked_builder">Craccato</label><br>
+        <input type="radio" id="bedrock_builder" name="minecraft_account_builder" value="bedrock">
+        <label for="bedrock_builder">Bedrock</label><br>
+    
+        <label for="build_style">Che stile di costruzione preferisci? *</label>
+        <input type="text" id="build_style" name="build_style" required><br>
+    
+        <label for="build_examples">Invia delle tue costruzioni (almeno 3) *</label>
+        <input type="file" id="build_examples" name="build_examples[]" accept="image/*" multiple required><br>
+    
+        <label for="skill_level">Quanto ti ritieni bravo da builder? *</label><br>
+        <input type="radio" id="beginner" name="skill_level" value="poco" required>
+        <label for="beginner">Poco</label><br>
+        <input type="radio" id="1" name="skill_level" value="1">
+        <label for="1">1</label><br>
+        <input type="radio" id="2" name="skill_level" value="2">
+        <label for="2">2</label><br>
+        <input type="radio" id="3" name="skill_level" value="3">
+        <label for="3">3</label><br>
+        <input type="radio" id="4" name="skill_level" value="4">
+        <label for="4">4</label><br>
+        <input type="radio" id="5" name="skill_level" value="5">
+        <label for="5">5</label><br>
+        <input type="radio" id="expert" name="skill_level" value="molto">
+        <label for="expert">Molto</label><br>
+    
+        <label for="extra_builder">Cosa credi di avere in più degli altri builder? *</label>
+        <textarea id="extra_builder" name="extra_builder" required></textarea><br>
+    
+        <label for="previous_experience">Hai avuto esperienza come builder in altri server? Se sì, in quali? *</label>
+        <textarea id="previous_experience" name="previous_experience" required></textarea><br>
+    
+        <label for="activity_builder">Quanto credi di essere attivo nel server? *</label><br>
+        <input type="radio" id="1h_builder" name="activity_builder" value="1H+" required>
+        <label for="1h_builder">1H+</label><br>
+        <input type="radio" id="2h_builder" name="activity_builder" value="2H+">
+        <label for="2h_builder">2H+</label><br>
+        <input type="radio" id="3h_builder" name="activity_builder" value="3H+">
+        <label for="3h_builder">3H+</label><br>
+        <input type="radio" id="4h_builder" name="activity_builder" value="4H+">
+        <label for="4h_builder">4H+</label><br>
+        <input type="radio" id="5h_builder" name="activity_builder" value="5H+">
+        <label for="5h_builder">5H+</label><br>
+    
+        <button type="submit" class="btn-submit">Invia</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<!-- Scripts-->
+
+<script>
+// Main Scripts //
+
+document.querySelector(".icon-hamburger").addEventListener("click", function () {
+    document.querySelector(".header").classList.toggle("menu-open");
+  });
+
+  function getDiscordMembers(guild, startstringsingle, endstringsingle, startstringmulti, endstringmulti) {
+    $.get("https://discordapp.com/api/guilds/" + guild + "/embed.json", function(data) {
+        let output = (data["presence_count"] == 1) ?
+            (startstringsingle + " " + data["presence_count"] + " " + endstringsingle) :
+            (startstringmulti + " " + data["presence_count"] + " " + endstringmulti);
+        $("#discordcount").html(output);
+    });
+}
+
+function getMinecraftPlayers(ip, startstringsingle, endstringsingle, startstringmulti, endstringmulti) {
+    $.getJSON("https://api.mcsrvstat.us/1/" + ip, function(data) {
+        let output = (data.players.online == 1) ?
+            (startstringsingle + " " + data.players.online + " " + endstringsingle) :
+            (startstringmulti + " " + data.players.online + " " + endstringmulti);
+        $("#minecraftcount").html(output);
+    });
+}
+
+var clipboard = new ClipboardJS('.copy');
+  
+window.onload = function() {
+    getDiscordMembers("1211782052022718474", "", "player online", "", "player online");
+    getMinecraftPlayers("play.hollowmc.it", "", "player online", "", "player online");
+    setInterval(function() {
+        getMinecraftPlayers("play.hollowmc.it", "", "player online", "", "player online");
+    }, 60 * 1000);
+}
+
+let item = document.querySelector('.icon-hamburger');
+  item.addEventListener("click", function() {
+    document.body.classList.toggle('menu-open');
+  });
+
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+              panel.style.display = "none";
+          } else {
+              panel.style.display = "block";
+          }
+      });
+  }
+
+  
+</script>
+
+</body>
+</html>

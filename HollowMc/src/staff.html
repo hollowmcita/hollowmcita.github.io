@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="author" content="HollowMc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <title>HollowMc | Staff</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+ <!-- Scripts -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0"></script>
+
+ <!-- Stylesheets -->
+ <link rel="stylesheet" href="/src/css/style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="stylesheet" href="/assets/80abfb8fd25eb1ad9a65b8017e1dff9223da45a8-css/style.css?v=1721921909">
+
+ <!--Fonts-->
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;900&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/css/staff.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+  <header class="header">
+    <div class="header__content">
+      <a class="header__logo" href="#">
+        <img class="image-logo" src="/src/images/logo.png" alt="">
+      </a>
+      <ul class="header__menu">
+        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-book-atlas"></i> Regolamento</a></li>
+        <li><a href="#" class="store-btn"><i class="fa-solid fa-store"></i> Store</a></li>
+        <li><a href="#"><i class="fa-solid fa-check-to-slot"></i> Vote</a></li>
+        <li><a href="#"><i class="fa-solid fa-clipboard-user"></i> Staff</a></li>
+      </ul>
+      <div class="header__quick">
+        <a href="#">Contacts</a>
+        <div class="icon-hamburger">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header> 
+  <!--Hero-->  
+  <div class="hero">
+        <div class="flex justify-between items-center flex-col z-20">
+            <div class="flex-1 flex justify-center items-center gap-12 px-5 lg:px-0 w-full" style="min-height: 15rem;">
+                <div class="flex-1 hidden lg:flex items-center justify-end gap-5">
+                    <div class="text-right copy hover:cursor-pointer" onclick="change_text();">
+                        <h2 class="neon-text text-lg"><strong>HOLLOWMC.IT</strong></h2>
+                        <span id="minecraftcount"><strong>No players online</strong></span>
+                    </div>
+                    <div class="flex-none flex justify-center items-center h-16 w-16 icon rounded-lg">
+                        <i class="fa-solid fa-globe h-fit text-3xl"></i>
+                    </div>
+                </div>
+                <div class="flex-none max-h-96 max-w-md w-fit h-fit p-6">
+                  <img class="animation-floating-logo" src="/src/images/logo.png">
+              </div>              
+                <div class="flex-1 hidden lg:flex items-center justify-start gap-5">
+                    <div class="flex-none flex justify-center items-center h-16 w-16 icon rounded-lg">
+                        <i class="fa-brands fa-discord h-fit text-3xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <h2 class="neon-text text-lg"><strong>DISCORD SERVER</strong></h2>
+                        <span id="discordcount"><strong>No players online</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Main Content -->
+<div class="flex-container">
+  <!-- Discord Widget -->
+  <iframe src="https://discord.com/widget?id=1211782052022718474&theme=dark" 
+          width="350" 
+          height="500" 
+          allowtransparency="true" 
+          frameborder="0" 
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" 
+          class="discord-widget">
+  </iframe>
+  
+  <!-- Team -->
+  <section id="team">
+      <div class="container">
+          <div class="heading">
+              <span>Chi siamo</span>
+              <h2>Scopri il team</h2>
+          </div>
+          <div class="wrapper">
+              <div class="swiper team-swiper">
+                  <div class="swiper-wrapper">
+                      <!-- Team members here -->
+                      <div class="swiper-slide member-slide">
+                          <div class="member-intro">
+                              <div class="member-profile">
+                                  <h3>Alexone</h3>
+                                  <span>Founder</span>
+                              </div>
+                              <p>
+                                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa voluptatum eveniet accusantium! Praesentium tempora enim possimus, perferendis similique architecto omnis labore voluptatem cum modi eius exercitationem excepturi nemo at repudiandae.
+                              </p>
+                          </div>
+                          <div class="member-avatar">
+                              <img src="https://mc-heads.net/body/Alexone__/left" alt="" draggable="false" />
+                          </div>
+                      </div>
+
+                      <div class="swiper-slide member-slide">
+                          <div class="member-intro">
+                              <div class="member-profile">
+                                  <h3>DopinderHub</h3>
+                                  <span>Founder</span>
+                              </div>
+                              <p>
+                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facere neque sequi voluptate at illo eius et, repellendus facilis animi provident consequuntur quae officiis ipsum magnam, cupiditate dolorum! Dolorum, adipisci!
+                              </p>
+                          </div>
+                          <div class="member-avatar">
+                              <img src="https://mc-heads.net/body/Dopihub/left" alt="" draggable="false" />
+                          </div>
+                      </div>
+
+                      <div class="swiper-slide member-slide">
+                          <div class="member-intro">
+                              <div class="member-profile">
+                                  <h3>Renderizzazione</h3>
+                                  <span>Owner</span>
+                              </div>
+                              <p>
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quo praesentium enim, fugiat dolores est obcaecati, cum eius, nemo ipsa alias velit! Inventore ullam rem possimus eaque libero doloribus.
+                              </p>
+                          </div>
+                          <div class="member-avatar">
+                              <img src="https://mc-heads.net/body/Renderizzazione/left" alt="" draggable="false" />
+                          </div>
+                      </div>
+
+                      <div class="swiper-slide member-slide">
+                          <div class="member-intro">
+                              <div class="member-profile">
+                                  <h3>Vl4d_ua</h3>
+                                  <span>Developer</span>
+                              </div>
+                              <p>
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ex, magnam quisquam voluptate ratione eligendi dolor assumenda, accusantium mollitia, a reiciendis velit odio exercitationem impedit eum? Dolores repellat unde quod?
+                              </p>
+                          </div>
+                          <div class="member-avatar">
+                              <img src="https://mc-heads.net/body/sailysua/left" alt="" draggable="false" />
+                          </div>
+                          
+                      </div>
+                  </div>
+                  <div class="swiper-buttons">
+                      <div class="team-swiper-button-prev">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                              <path d="M18 22H14V18H18L18 22Z"></path>
+                              <path d="M10 14H14L14 18H10L10 14Z"></path>
+                              <path d="M10 10L10 14L6 14L6 10H10Z"></path>
+                              <path d="M14 6L10 6V10L14 10L14 6Z"></path>
+                              <path d="M14 6V2L18 2V6L14 6Z"></path>
+                          </svg>
+                      </div>
+                      <div class="team-swiper-pagination"></div>
+                      <div class="team-swiper-button-next">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                              <path d="M6 2H10V6H6V2Z"></path>
+                              <path d="M14 10H10V6H14V10Z"></path>
+                              <path d="M14 14V10H18V14H14Z"></path>
+                              <path d="M10 18H14V14H10V18Z"></path>
+                              <path d="M10 18V22H6V18H10Z"></path>
+                          </svg>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="#team-swiper-progress" class="progress-bar"></div>
+          </div>
+      </div>
+  </section>
+</div>
+
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="/src/js/staff.js"></script>
+
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
